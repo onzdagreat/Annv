@@ -3,20 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Photo Reveal Game</title>
+  <title>4th Anniversary Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="game-container">
-    <h1>Uncover the Memory</h1>
-    <div class="photo-container">
-      <div id="photo" class="blurred-photo"></div>
+  <div class="container">
+    <div class="game">
+      <h1 class="game-title">Happy 4th Anniversary, My Love!</h1>
+      <p class="game-description">Tap the tiles to reveal a special memory. ❤️</p>
+      <div id="photo-grid" class="photo-grid"></div>
+      <button id="start-button" class="button">Start Game</button>
     </div>
-    <p id="question"></p>
-    <div id="options"></div>
-    <button id="start" onclick="startGame()">Start</button>
-    <p id="congrats" style="display: none;">Congratulations! You've revealed the photo! ❤️</p>
+    <div id="message" class="message hidden">
+      <p>🎉 Congratulations! Here's to many more beautiful years together. 🎉</p>
+    </div>
   </div>
+  <audio id="background-music" loop>
+    <source src="music/background.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  <audio id="click-sound">
+    <source src="sounds/click.mp3" type="audio/mpeg">
+  </audio>
   <script src="script.js"></script>
 </body>
 </html>
