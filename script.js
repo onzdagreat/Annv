@@ -40,11 +40,16 @@ let currentRound = 0;
 let triesLeft = 3;
 
 // Start the game
-startButton.addEventListener('click', () => {
-  welcomeScreen.classList.add('hidden');
-  gameScreen.classList.remove('hidden');
-  loadRound();
+document.addEventListener('DOMContentLoaded', () => {
+  const startButton = document.getElementById('start-game-button');
+  startButton.addEventListener('click', () => {
+    console.log('Start Button Clicked');
+    welcomeScreen.classList.add('hidden');
+    gameScreen.classList.remove('hidden');
+    loadRound();
+  });
 });
+
 
 // Load the current round
 function loadRound() {
