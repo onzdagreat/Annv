@@ -3,35 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anniversary Photo Reveal Game</title>
+  <title>Photo Reveal Game</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Welcome Screen -->
   <div id="welcome-screen" class="screen active">
-    <h1>Welcome to Our Special Game!</h1>
-    <p>Unblur 3 beautiful memories by answering questions. You have 3 tries per question. Good luck! 💖</p>
+    <h1>Welcome to the Photo Reveal Game</h1>
+    <p>Answer questions correctly to reveal hidden photos! You have three chances per question.</p>
     <button id="start-game-button">Start Game</button>
   </div>
 
-  <!-- Game Screen -->
   <div id="game-screen" class="screen hidden">
-    <h2 id="round-title">Question 1</h2>
-    <div id="photo-container">
-      <img id="photo" src="images/photo1.jpg" alt="Memory Photo" class="blurred">
-    </div>
+    <h2 id="round-title">Round 1</h2>
     <p id="question">Question will appear here</p>
-    <div id="answers"></div>
-    <p id="feedback" class="hidden">Feedback message</p>
+    <div id="options-container"></div>
+    <p id="feedback"></p>
+    <div id="photo-container">
+      <img id="photo" src="photo1.jpg" alt="Hidden Photo" class="blurred">
+    </div>
   </div>
 
-  <!-- End Screen -->
-  <div id="end-screen" class="screen hidden">
-    <h1>Congratulations! 🎉</h1>
-    <p>You’ve unlocked all the memories! Download them to keep forever. 🥂</p>
-    <button id="download-all-button">Download All Photos</button>
+  <div id="result-screen" class="screen hidden">
+    <h1>Congratulations!</h1>
+    <p>You've completed the game and revealed all the photos.</p>
+    <button id="restart-game-button">Play Again</button>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

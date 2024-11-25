@@ -1,120 +1,105 @@
-// Welcome and navigation between screens
-const welcomeScreen = document.getElementById('welcome-screen');
-const gameScreen = document.getElementById('game-screen');
-const endScreen = document.getElementById('end-screen');
-const startButton = document.getElementById('start-game-button');
-
-// Game elements
-const photo = document.getElementById('photo');
-const questionElement = document.getElementById('question');
-const answersElement = document.getElementById('answers');
-const feedbackElement = document.getElementById('feedback');
-const roundTitle = document.getElementById('round-title');
-
-// End screen elements
-const downloadAllButton = document.getElementById('download-all-button');
-
-// Game data
-const rounds = [
-  {
-    photo: 'images/photo1.jpg',
-    question: 'Where did we first meet?',
-    options: ['Park', 'Cafe', 'Library', 'Mall', 'Beach'],
-    answer: 'Cafe'
-  },
-  {
-    photo: 'images/photo2.jpg',
-    question: 'Our favorite movie together?',
-    options: ['Titanic', 'Inception', 'The Notebook', 'Avatar', 'Joker'],
-    answer: 'The Notebook'
-  },
-  {
-    photo: 'images/photo3.jpg',
-    question: 'What’s my nickname for you?',
-    options: ['Babe', 'Honey', 'Love', 'Sweetheart', 'Darling'],
-    answer: 'Honey'
-  }
-];
-
-let currentRound = 0;
-let triesLeft = 3;
-
-// Start the game
 document.addEventListener('DOMContentLoaded', () => {
+  const welcomeScreen = document.getElementById('welcome-screen');
+  const gameScreen = document.getElementById('game-screen');
+  const resultScreen = document.getElementById('result-screen');
   const startButton = document.getElementById('start-game-button');
-  startButton.addEventListener('click', () => {
-    console.log('Start Button Clicked');
+  const restartButton = document.getElementById('restart-game-button');
+  const roundTitle = document.getElementById('round-title');
+  const questionElement = document.getElementById('question');
+  const optionsContainer = document.getElementById('options-container');
+  const feedback = document.getElementById('feedback');
+  const photo = document.getElementById('photo');
+
+  const questions = [
+    {
+      question: "What's her favorite color?",
+      options: ["Red", "Blue", "Green", "Yellow", "Pink"],
+      answer: "Pink",
+      photo: "photo1.jpg",
+    },
+    {
+      question: "Where did we first meet?",
+      options: ["School", "Park", "Cafe", "Library", "Beach"],
+      answer: "Cafe",
+      photo: "photo2.jpg",
+    },
+    {
+      question: "What's our anniversary month?",
+      options: ["January", "March", "June", "November", "December"],
+      answer: "November",
+      photo: "photo3.jpg",
+    },
+  ];
+
+  let currentRound = 0;
+  let attempts = 3;
+
+  const startGame = () => {
     welcomeScreen.classList.add('hidden');
     gameScreen.classList.remove('hidden');
     loadRound();
-  });
-});
+  };
 
+  const loadRound = () => {
+    const currentQuestion = questions[currentRound];
+    roundTitle.textContent = `Round ${currentRound + 1}`;
+    questionElement.textContent = currentQuestion.question;
+    feedback.textContent = '';
+    photo.src = currentQuestion.photo;
+    photo.classList.add('blurred');
+    optionsContainer.innerHTML = '';
+    attempts = 3;
 
-// Load the current round
-function loadRound() {
-  const round = rounds[currentRound];
-  roundTitle.textContent = `Question ${currentRound + 1}`;
-  photo.src = round.photo;
-  photo.style.filter = 'blur(20px)';
-  questionElement.textContent = round.question;
+    currentQuestion.options.forEach(option => {
+      const button = document.createElement('div');
+      button.textContent = option;
+      button.classList.add('option');
+      button.addEventListener('click', () => handleAnswer(option));
+      optionsContainer.appendChild(button);
+    });
+  };
 
-  // Clear previous answers
-  answersElement.innerHTML = '';
-  round.options.forEach(option => {
-    const button = document.createElement('button');
-    button.textContent = option;
-    button.addEventListener('click', () => checkAnswer(option));
-    answersElement.appendChild(button);
-  });
-}
-
-// Check the user's answer
-function checkAnswer(selected) {
-  const round = rounds[currentRound];
-  if (selected === round.answer) {
-    // Correct answer
-    photo.style.filter = 'blur(0px)';
-    feedbackElement.classList.add('hidden');
-    setTimeout(() => {
-      currentRound++;
-      if (currentRound < rounds.length) {
-        loadRound();
-      } else {
-        endGame();
-      }
-    }, 2000);
-  } else {
-    // Wrong answer
-    triesLeft--;
-    feedbackElement.textContent = `Wrong answer! Tries left: ${triesLeft}`;
-    feedbackElement.classList.remove('hidden');
-    if (triesLeft === 0) {
-      feedbackElement.textContent = 'Out of tries! Moving to the next question.';
+  const handleAnswer = (selectedOption) => {
+    const currentQuestion = questions[currentRound];
+    if (selectedOption === currentQuestion.answer) {
+      photo.classList.remove('blurred');
+      feedback.textContent = 'Correct! Moving to the next round...';
+      feedback.style.color = 'green';
       setTimeout(() => {
         currentRound++;
-        if (currentRound < rounds.length) {
+        if (currentRound < questions.length) {
           loadRound();
         } else {
-          endGame();
+          showResults();
         }
-      }, 2000);
+      }, 1000);
+    } else {
+      attempts--;
+      feedback.textContent = `Incorrect! Attempts left: ${attempts}`;
+      feedback.style.color = 'red';
+      if (attempts === 0) {
+        feedback.textContent = 'Game Over! Restart to try again.';
+        disableOptions();
+      }
     }
-  }
-}
+  };
 
-// End the game
-function endGame() {
-  gameScreen.classList.add('hidden');
-  endScreen.classList.remove('hidden');
-}
+  const disableOptions = () => {
+    const options = optionsContainer.querySelectorAll('.option');
+    options.forEach(option => option.classList.add('disabled'));
+  };
 
-// Download all photos
-downloadAllButton.addEventListener('click', () => {
-  rounds.forEach((round, index) => {
-    const a = document.createElement('a');
-    a.href = round.photo;
-    a.download = `Memory-${index + 1}.jpg`;
-    a.click();
-  });
+  const showResults = () => {
+    gameScreen.classList.add('hidden');
+    resultScreen.classList.remove('hidden');
+  };
+
+  const restartGame = () => {
+    currentRound = 0;
+    resultScreen.classList.add('hidden');
+    welcomeScreen.classList.remove('hidden');
+  };
+
+  startButton.addEventListener('click', startGame);
+  restartButton.addEventListener('click', restartGame);
 });
