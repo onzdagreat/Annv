@@ -3,29 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>4th Anniversary Game</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <title>Anniversary Photo Reveal Game</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <div class="game">
-      <h1 class="game-title">Happy 4th Anniversary, My Love!</h1>
-      <p class="game-description">Tap the tiles to reveal a special memory. ❤️</p>
-      <div id="photo-grid" class="photo-grid"></div>
-      <button id="start-button" class="button">Start Game</button>
-    </div>
-    <div id="message" class="message hidden">
-      <p>🎉 Congratulations! Here's to many more beautiful years together. 🎉</p>
-    </div>
+  <!-- Welcome Screen -->
+  <div id="welcome-screen" class="screen active">
+    <h1>Welcome to Our Special Game!</h1>
+    <p>Unblur 3 beautiful memories by answering questions. You have 3 tries per question. Good luck! 💖</p>
+    <button id="start-game-button">Start Game</button>
   </div>
-  <audio id="background-music" loop>
-    <source src="music/background.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-  <audio id="click-sound">
-    <source src="sounds/click.mp3" type="audio/mpeg">
-  </audio>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen hidden">
+    <h2 id="round-title">Question 1</h2>
+    <div id="photo-container">
+      <img id="photo" src="images/photo1.jpg" alt="Memory Photo" class="blurred">
+    </div>
+    <p id="question">Question will appear here</p>
+    <div id="answers"></div>
+    <p id="feedback" class="hidden">Feedback message</p>
+  </div>
+
+  <!-- End Screen -->
+  <div id="end-screen" class="screen hidden">
+    <h1>Congratulations! 🎉</h1>
+    <p>You’ve unlocked all the memories! Download them to keep forever. 🥂</p>
+    <button id="download-all-button">Download All Photos</button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
