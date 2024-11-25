@@ -1,64 +1,57 @@
-/* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
-  text-align: center;
-}
-
-h1, h2 {
-  font-size: 2rem;
-}
-
-.screen {
-  display: none;
-}
-
-.screen.active {
-  display: block;
-}
-
-.screen.hidden {
-  display: none;
-}
-
-#photo {
-  max-width: 100%;
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  filter: blur(8px);
-  transition: filter 0.5s ease;
-}
-
-#photo:not(.blurred) {
-  filter: none;
-}
-
-#options-container {
-  margin-top: 20px;
-}
-
-.option {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 5px;
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.option:hover {
-  background-color: #45a049;
-}
-
-.disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-#feedback {
-  margin-top: 20px;
-  font-size: 1.2rem;
-}
+    font-family: Arial, sans-serif;
+    background-color: #ffe4e1;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .game-container {
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #ff69b4;
+  }
+  
+  .photo-container {
+    margin: 20px 0;
+    position: relative;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    border: 5px solid #ff69b4;
+  }
+  
+  .blurred-photo {
+    background-image: url(photo.jpg); /* Replace with your photo */
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px);
+    height: 100%;
+    width: 100%;
+    transition: filter 0.5s ease;
+  }
+  
+  .reveal {
+    filter: blur(0);
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ff85c2;
+  }
+  

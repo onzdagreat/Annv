@@ -7,31 +7,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Welcome Screen (Removed the start button) -->
-  <div id="welcome-screen" class="screen active">
-    <h1>Welcome to the Photo Reveal Game</h1>
-    <p>Answer questions correctly to reveal the hidden photo! You have three chances per question.</p>
-  </div>
-
-  <!-- Game Screen -->
-  <div id="game-screen" class="screen hidden">
-    <h2 id="round-title">Round 1</h2>
-    <p id="question">Question will appear here</p>
-    <div id="options-container"></div>
-    <p id="feedback"></p>
-    <div id="photo-container">
-      <img id="photo" src="photo1.jpg" alt="Hidden Photo" class="blurred">
+  <div class="game-container">
+    <h1>Uncover the Memory</h1>
+    <div class="photo-container">
+      <div id="photo" class="blurred-photo"></div>
     </div>
+    <p id="question"></p>
+    <div id="options"></div>
+    <button id="start" onclick="startGame()">Start</button>
+    <p id="congrats" style="display: none;">Congratulations! You've revealed the photo! ❤️</p>
   </div>
-
-  <!-- Result Screen -->
-  <div id="result-screen" class="screen hidden">
-    <h1>Congratulations!</h1>
-    <p>You've completed the game and revealed the photo.</p>
-    <button id="restart-game-button">Play Again</button>
-  </div>
-
-  <!-- Include the JavaScript file -->
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
