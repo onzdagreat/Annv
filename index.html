@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Welcome Screen (Removed the start button) -->
   <div id="welcome-screen" class="screen active">
     <h1>Welcome to the Photo Reveal Game</h1>
-    <p>Answer questions correctly to reveal hidden photos! You have three chances per question.</p>
-    <button id="start-game-button">Start Game</button>
+    <p>Answer questions correctly to reveal the hidden photo! You have three chances per question.</p>
   </div>
 
+  <!-- Game Screen -->
   <div id="game-screen" class="screen hidden">
     <h2 id="round-title">Round 1</h2>
     <p id="question">Question will appear here</p>
@@ -23,12 +24,14 @@
     </div>
   </div>
 
+  <!-- Result Screen -->
   <div id="result-screen" class="screen hidden">
     <h1>Congratulations!</h1>
-    <p>You've completed the game and revealed all the photos.</p>
+    <p>You've completed the game and revealed the photo.</p>
     <button id="restart-game-button">Play Again</button>
   </div>
 
+  <!-- Include the JavaScript file -->
   <script src="script.js" defer></script>
 </body>
 </html>
