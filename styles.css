@@ -1,4 +1,32 @@
 /* General Reset */
+
+
+h1 {
+  font-size: 2.5rem; /* Larger font for emphasis */
+  color: #d46a7e; /* Muted romantic pink */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  font-family: 'Dancing Script', cursive; /* Elegant, romantic font */
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #ffafbd, #ffc3a0); /* Gradient text */
+  -webkit-background-clip: text; /* Clip background to text */
+  -webkit-text-fill-color: transparent; /* Make text fill transparent to reveal gradient */
+  animation: glow 2s infinite alternate; /* Subtle glowing effect */
+}
+
+/* Animation for glowing effect */
+@keyframes glow {
+  from {
+    text-shadow: 2px 2px 4px rgba(255, 174, 201, 0.5),
+                 0 0 10px rgba(255, 174, 201, 0.5);
+  }
+  to {
+    text-shadow: 2px 2px 8px rgba(255, 174, 201, 0.8),
+                 0 0 15px rgba(255, 174, 201, 0.8);
+  }
+}
+
+
+
 body, html {
   margin: 0;
   padding: 0;
