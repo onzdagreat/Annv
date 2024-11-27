@@ -99,6 +99,9 @@ function showQuestion(questionData) {
   });
 }
 
+
+
+
 function checkAnswer(selected, correct) {
   if (selected === correct) {
     currentQuestion++;
@@ -115,7 +118,8 @@ function checkAnswer(selected, correct) {
         presentDownloadOption(round.photo);
         currentRound++;
         if (currentRound < rounds.length) {
-          alert("Round Complete! Download the revealed photo and prepare for the next round.");
+          alert("Round Complete! Get ready for the next photo.");
+          
           setupRound(currentRound);
         } else {
           endGame();
@@ -141,7 +145,7 @@ function presentDownloadOption(photoPath) {
   document.body.appendChild(downloadButton);
 
   // Remove download button after a while to avoid clutter
-  setTimeout(() => downloadButton.remove(), 5000); // 1 seconds
+  setTimeout(() => downloadButton.remove(), 10000); // 1 seconds
 }
 
 function endGame() {
