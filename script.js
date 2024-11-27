@@ -128,7 +128,7 @@ function checkAnswer(selected, correct) {
 }
 
 function revealPhoto() {
-  const blurValue = 20 - currentQuestion * 5;
+  const blurValue = 15 - currentQuestion * 5;
   photoElement.style.filter = `blur(${Math.max(blurValue, 0)}px)`;
 }
 
@@ -141,7 +141,7 @@ function presentDownloadOption(photoPath) {
   document.body.appendChild(downloadButton);
 
   // Remove download button after a while to avoid clutter
-  setTimeout(() => downloadButton.remove(), 10000); // 10 seconds
+  setTimeout(() => downloadButton.remove(), 5000); // 1 seconds
 }
 
 function endGame() {
