@@ -112,9 +112,10 @@ function checkAnswer(selected, correct) {
     } else {
       revealPhoto();
       setTimeout(() => {
+        presentDownloadOption(round.photo);
         currentRound++;
         if (currentRound < rounds.length) {
-          alert("Round Complete! Get ready for the next photo.");
+          alert("Round Complete! Download the revealed photo and prepare for the next round.");
           setupRound(currentRound);
         } else {
           endGame();
@@ -127,8 +128,20 @@ function checkAnswer(selected, correct) {
 }
 
 function revealPhoto() {
-  const blurValue = 15 - currentQuestion * 5;
+  const blurValue = 20 - currentQuestion * 5;
   photoElement.style.filter = `blur(${Math.max(blurValue, 0)}px)`;
+}
+
+function presentDownloadOption(photoPath) {
+  const downloadButton = document.createElement("a");
+  downloadButton.href = photoPath;
+  downloadButton.download = `RevealedPhoto_${currentRound + 1}.jpg`;
+  downloadButton.textContent = "Download Revealed Photo";
+  downloadButton.className = "download-button"; // Add CSS for better styling if needed
+  document.body.appendChild(downloadButton);
+
+  // Remove download button after a while to avoid clutter
+  setTimeout(() => downloadButton.remove(), 10000); // 10 seconds
 }
 
 function endGame() {
