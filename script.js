@@ -5,39 +5,44 @@ const rounds = [
       {
         question: "Where did we go on our first date?",
         options: ["Park", "Cinema", "Beach", "Restaurant"],
-        answer: "Cinema"
+        answer: "Cinema",
       },
       {
         question: "What’s our favorite snack during movie nights?",
         options: ["Popcorn", "Chocolate", "Chips", "Ice cream"],
-        answer: "Popcorn"
+        answer: "Popcorn",
       },
       {
         question: "Which city did we visit for our first trip together?",
         options: ["Paris", "New York", "Rome", "Tokyo"],
-        answer: "Rome"
-      }
-    ]
+        answer: "Rome",
+      },
+    ],
   },
   {
     photo: "photo2.jpg",
     questions: [
       {
         question: "What’s the name of our favorite song?",
-        options: ["Shape of You", "Perfect", "Blinding Lights", "Thinking Out Loud"],
-        answer: "Perfect"
+        options: [
+          "Shape of You",
+          "Perfect",
+          "Blinding Lights",
+          "Thinking Out Loud",
+        ],
+        answer: "Perfect",
       },
       {
         question: "What’s our anniversary month?",
         options: ["January", "February", "March", "April"],
-        answer: "February"
+        answer: "February",
       },
       {
         question: "What’s the name of our first pet?",
         options: ["Buddy", "Max", "Bella", "Lucy"],
-        answer: "Buddy"
-      }
-    ]
+        answer: "Buddy",
+      },
+    ],
   },
   {
     photo: "photo3.jpg",
@@ -45,20 +50,20 @@ const rounds = [
       {
         question: "What’s our favorite vacation activity?",
         options: ["Hiking", "Swimming", "Reading", "Sunbathing"],
-        answer: "Swimming"
+        answer: "Swimming",
       },
       {
         question: "What’s the name of the movie we watched on our first date?",
         options: ["Inception", "Titanic", "Avatar", "Frozen"],
-        answer: "Titanic"
+        answer: "Titanic",
       },
       {
         question: "What’s the color of our first car?",
         options: ["Red", "Blue", "Black", "White"],
-        answer: "Red"
-      }
-    ]
-  }
+        answer: "Red",
+      },
+    ],
+  },
 ];
 
 let currentRound = 0;
@@ -76,8 +81,9 @@ function startGame() {
 
 function setupRound(roundIndex) {
   const round = rounds[roundIndex];
+  currentQuestion = 0; // Reset questions for the round
   photoElement.style.backgroundImage = `url(${round.photo})`;
-  currentQuestion = 0; // Reset the question for the new round
+  photoElement.style.filter = "blur(20px)"; // Ensure photo starts fully blurred
   showQuestion(round.questions[currentQuestion]);
 }
 
@@ -85,7 +91,7 @@ function showQuestion(questionData) {
   const question = questionData;
   questionElement.textContent = question.question;
   optionsElement.innerHTML = "";
-  question.options.forEach(option => {
+  question.options.forEach((option) => {
     const button = document.createElement("button");
     button.textContent = option;
     button.onclick = () => checkAnswer(option, question.answer);
@@ -99,16 +105,21 @@ function checkAnswer(selected, correct) {
     const round = rounds[currentRound];
     if (currentQuestion < round.questions.length) {
       revealPhoto();
-      showQuestion(round.questions[currentQuestion]);
+      setTimeout(
+        () => showQuestion(round.questions[currentQuestion]),
+        1000
+      ); // Slight delay before showing next question
     } else {
       revealPhoto();
-      currentRound++;
-      if (currentRound < rounds.length) {
-        alert("Round Complete! Get ready for the next photo.");
-        setupRound(currentRound);
-      } else {
-        endGame();
-      }
+      setTimeout(() => {
+        currentRound++;
+        if (currentRound < rounds.length) {
+          alert("Round Complete! Get ready for the next photo.");
+          setupRound(currentRound);
+        } else {
+          endGame();
+        }
+      }, 3000); // Delay before starting next round
     }
   } else {
     alert("Try again!");
@@ -116,7 +127,7 @@ function checkAnswer(selected, correct) {
 }
 
 function revealPhoto() {
-  const blurValue = 20 - currentQuestion * 5;
+  const blurValue = 15 - currentQuestion * 5;
   photoElement.style.filter = `blur(${Math.max(blurValue, 0)}px)`;
 }
 
