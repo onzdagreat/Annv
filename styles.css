@@ -7,7 +7,7 @@ h1 {
   color: #6b0f1a; /* Deep crimson for a romantic vibe */
   margin-bottom: 20px;
   text-align: center;
-  letter-spacing: 2px; /* Adds spacing for sophistication */
+  
   background: linear-gradient(to bottom, #e66465, #9198e5); /* Elegant vertical gradient */
   -webkit-background-clip: text; /* Clips background to the text */
   -webkit-text-fill-color: transparent; /* Transparent text to reveal gradient */
