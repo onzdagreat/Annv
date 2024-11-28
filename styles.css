@@ -44,8 +44,9 @@ h1::before {
 
 
 h2 { 
+  font-family: 'Dancing Script', cursive; /* Elegant, romantic font */
   font-size: 1.2rem;
-  color:#e360e6
+  color:#050105
 }
 
 
@@ -78,9 +79,24 @@ body, html {
 /* Header Styling */
 h1 {
   font-size: 2rem;
-  color: #d46a7e; /* Muted pink */
+  color: #1d0308; /* Muted pink */
   margin-bottom: 20px;
 }
+
+
+
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
 
 /* Photo Container */
 .photo-container {

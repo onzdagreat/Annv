@@ -91,12 +91,12 @@ const rounds = [
       {
         question: "What’s the name of our favorite TV show?",
         options: ["Show A", "Show B", "Show C", "Show D"],
-        answer: "Show C"
+        answer: "Show A"
       },
       {
         question: "What’s the name of our first vacation spot?",
         options: ["City A", "City B", "City C", "City D"],
-        answer: "City B"
+        answer: "City A"
       },
       {
         question: "What’s our favorite drink?",
