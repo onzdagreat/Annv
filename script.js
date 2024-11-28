@@ -62,8 +62,49 @@ const rounds = [
         options: ["Red", "Blue", "Black", "White"],
         answer: "Red",
       },
+
     ],
   },
+  {
+    photo: "photo4.jpg",
+    questions: [
+      {
+        question: "Where did we celebrate our first anniversary?",
+        options: ["Restaurant", "Park", "Beach", "Home"],
+        answer: "Restaurant"
+      },
+      {
+        question: "What’s the name of our favorite book?",
+        options: ["Book A", "Book B", "Book C", "Book D"],
+        answer: "Book A"
+      },
+      {
+        question: "What’s our favorite dessert?",
+        options: ["Cake", "Ice Cream", "Pudding", "Brownie"],
+        answer: "Cake"
+      }
+    ]
+  },
+  {
+    photo: "photo5.jpg",
+    questions: [
+      {
+        question: "What’s the name of our favorite TV show?",
+        options: ["Show A", "Show B", "Show C", "Show D"],
+        answer: "Show C"
+      },
+      {
+        question: "What’s the name of our first vacation spot?",
+        options: ["City A", "City B", "City C", "City D"],
+        answer: "City B"
+      },
+      {
+        question: "What’s our favorite drink?",
+        options: ["Coffee", "Tea", "Juice", "Soda"],
+        answer: "Coffee"
+      }
+    ]
+  }
 ];
 
 let currentRound = 0;
