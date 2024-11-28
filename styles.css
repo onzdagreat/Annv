@@ -2,34 +2,50 @@
 
 
 h1 {
-  font-size: 2.5rem; /* Larger font for emphasis */
-  color: #d46a7e; /* Muted romantic pink */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  font-size: 3rem; /* Larger font for a grand impact */
   font-family: 'Dancing Script', cursive; /* Elegant, romantic font */
+  color: #6b0f1a; /* Deep crimson for a romantic vibe */
   margin-bottom: 20px;
-  background: linear-gradient(to right, #ffafbd, #ffc3a0); /* Gradient text */
-  -webkit-background-clip: text; /* Clip background to text */
-  -webkit-text-fill-color: transparent; /* Make text fill transparent to reveal gradient */
-  animation: glow 2s infinite alternate; /* Subtle glowing effect */
+  text-align: center;
+  letter-spacing: 2px; /* Adds spacing for sophistication */
+  background: linear-gradient(to bottom, #e66465, #9198e5); /* Elegant vertical gradient */
+  -webkit-background-clip: text; /* Clips background to the text */
+  -webkit-text-fill-color: transparent; /* Transparent text to reveal gradient */
+  text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2); /* Adds depth and focus */
+  position: relative; /* For pseudo-element positioning */
 }
+
+h1::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 5px;
+  background: linear-gradient(to right, #e66465, #9198e5); /* Matches gradient style */
+  border-radius: 5px;
+  animation: pulse 2s infinite ease-in-out; /* Adds a dynamic underline effect */
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-50%) scaleX(1.5);
+    opacity: 0.7;
+  }
+}
+
+
+
+
 
 h2 { 
   font-size: 1.2rem;
-  color:#4a154b
-}
-
-
-
-/* Animation for glowing effect */
-@keyframes glow {
-  from {
-    text-shadow: 2px 2px 4px rgba(255, 174, 201, 0.5),
-                 0 0 10px rgba(255, 174, 201, 0.5);
-  }
-  to {
-    text-shadow: 2px 2px 8px rgba(255, 174, 201, 0.8),
-                 0 0 15px rgba(255, 174, 201, 0.8);
-  }
+  color:#e360e6
 }
 
 
@@ -51,7 +67,7 @@ body, html {
 
 /* Game Container */
 .game-container {
-  width: 90%;
+  width: 100%;
   max-width: 600px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
