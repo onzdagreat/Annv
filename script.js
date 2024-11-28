@@ -190,7 +190,7 @@ function presentDownloadOption(photoPath) {
   document.body.appendChild(downloadButton);
 
   // Remove download button after a while to avoid clutter
-  setTimeout(() => downloadButton.remove(), 10000); // 1 seconds
+  setTimeout(() => downloadButton.remove(), 10); // 1 seconds
 }
 
 function endGame() {
