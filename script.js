@@ -172,14 +172,38 @@ function checkAnswer(selected, correct) {
       }, 3000); // Delay before starting next round
     }
   } else {
-    alert("Try again!");
+    showAlert("Try again!");
   }
 }
+
+
+function showAlert(message) {
+  // Create the alert box
+  const alertBox = document.createElement("div");
+  alertBox.className = "alert-box";
+  alertBox.innerHTML = `
+    <p>${message}</p>
+    <button onclick="closeAlert(this)">Try Again</button>
+  `;
+
+  // Append the alert box to the body
+  document.body.appendChild(alertBox);
+}
+
+// Function to close and remove the alert
+function closeAlert(button) {
+  const alertBox = button.parentElement;
+  document.body.removeChild(alertBox);
+}
+
 
 function revealPhoto() {
   const blurValue = 15 - currentQuestion * 5;
   photoElement.style.filter = `blur(${Math.max(blurValue, 0)}px)`;
+
 }
+
+
 
 function presentDownloadOption(photoPath) {
   const downloadButton = document.createElement("a");
