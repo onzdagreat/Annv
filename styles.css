@@ -53,6 +53,7 @@ h2 {
 
 
 
+
 body, html {
   margin: 0;
   padding: 0;
@@ -145,7 +146,8 @@ h1 {
 
 /* Question Section */
 #question {
-  font-size: 1.2rem;
+  font-family: 'Dancing Script', cursive; /* Elegant, romantic font */
+  font-size: 1.7rem;
   color: #4a154b;
   margin: 20px 0;
 }
@@ -161,8 +163,8 @@ h1 {
 
 button {
   padding: 10px 20px;
-  background-color: #ff6f91; /* Soft romantic red */
-  color: #fff;
+  background-color: #faf7fa; /* Soft romantic red */
+  color: #08adb3e5;
   border: none;
   border-radius: 5px;
   font-size: 1rem;
@@ -173,7 +175,7 @@ button {
 }
 
 button:hover {
-  background-color: #ff9a9e; /* Slightly lighter pink */
+  background-color: #d6bcbc; /* Slightly lighter pink */
   transform: scale(1.05);
 }
 

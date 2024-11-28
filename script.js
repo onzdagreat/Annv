@@ -115,10 +115,14 @@ const photoElement = document.getElementById("photo");
 const congratsElement = document.getElementById("congrats");
 const startButton = document.getElementById("start");
 
+
+
 function startGame() {
   startButton.style.display = "none";
+  
   setupRound(currentRound);
 }
+
 
 function setupRound(roundIndex) {
   const round = rounds[roundIndex];
