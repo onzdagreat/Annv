@@ -175,7 +175,7 @@ button {
 }
 
 button:hover {
-  background-color: #d6bcbc; /* Slightly lighter pink */
+  background-color: #81064a; /* Slightly lighter pink */
   transform: scale(1.05);
 }
 
