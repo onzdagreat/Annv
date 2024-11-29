@@ -10,14 +10,14 @@ const rounds = [
       },
       {
         question: "What’s my favourite dish",
-        options: ["Popcorn", "Chocolate", "Chapo", "Ice cream", "Kunde", "Saratt", "Kuku","Pilau"],
+        options: ["Pizza", "Chocolate", "Chapo", "Ice cream", "Kunde", "Saratt", "Kuku","Pilau"],
         answer: "Chapo",
         attempts: 0
       },
       {
-        question: "Which of the following cities would I pick for our vacation",
-        options: ["Eldoret", "Rome", "Tokyo", "Egypt", "Thailand", "Santorini"],
-        answer: "Rome",
+        question: "Which of the following places would I prefer for our vacation",
+        options: ["Eldoret", "Maldives", "Tokyo", "Egypt", "Burumba", "Thailand", "Santorini", "Venice"],
+        answer: "Maldives",
         attempts: 0
       },
     ],
@@ -39,14 +39,14 @@ const rounds = [
         attempts: 0
       },
       {
-        question: "Which catchphrase or word do you say all the time",
-        options: ["Aye", "Anyways", "Nyash"],
-        answer: "Anyways",
+        question: "How many years have we known each other..❤️",
+        options: ["5", "3.5", "4", "6", "2.5", "4.5", "It's felt like forever❤️", "18"],
+        answer: "It's felt like forever❤️",
         attempts: 0
       },
       {
         question: "Which of these movies would I watch on repeat?",
-        options: ["Avatar", "Titanic", "The gods must be crazy", "Lucy", "Inception", "Predestination"],
+        options: ["Avatar", "Titanic", "The gods must be crazy", "Lucy", "Inception", "Predestination", "Mission Impossible"],
         answer: "The gods must be crazy",
         attempts: 0
       },
