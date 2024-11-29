@@ -92,7 +92,7 @@ const rounds = [
       },
       {
         question: "Who's your greatest crush?",
-        options: ["Justin Bieber", "Me", "The Rock", "Octopizzo😂", "Me & Only Me😌", "Khaligraph"],
+        options: ["Justin Bieber", "Me", "Jua Cali", "Octopizzo😂", "Me & Only Me😌", "Khaligraph"],
         answer: "Me & Only Me😌",
         attempts: 0
       },
@@ -109,7 +109,7 @@ const rounds = [
       },
       {
         question: "What's my main addiction?",
-        options: ["You", "You", "You", "You & Only You"],
+        options: ["You", "Cocaine", "You", "You & Only You"],
         answer: "You & Only You",
         attempts: 0
       },
