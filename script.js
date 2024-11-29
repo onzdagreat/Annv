@@ -86,7 +86,7 @@ const rounds = [
       },
       {
         question: "On our first link-up, nilikuspoil na nini..?",
-        options: ["Shawarma", "Pizza", "Sweets😂", "Cake", "Managu", "Watermelon", "Kuku"],
+        options: ["Shawarma", "Pizza", "Switi😂", "Cake", "Managu", "Watermelon", "Kuku"],
         answer: "Sweets😂",
         attempts: 0
       },
